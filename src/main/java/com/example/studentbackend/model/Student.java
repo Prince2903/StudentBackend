@@ -18,6 +18,11 @@ public class Student {
         this.address = address;
     }
 
+    public Student() {
+
+    }
+
+
     public Integer getId() {
         return id;
     }

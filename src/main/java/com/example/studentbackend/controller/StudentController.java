@@ -5,8 +5,7 @@ import com.example.studentbackend.repository.StudentRepositiory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 
 
@@ -15,16 +14,10 @@ import java.util.List;
 public class StudentController {
     @Autowired
     StudentRepositiory studentRepository;
-//    List<Student> students = new ArrayList<>(
-//            Arrays.asList(
-//                    new Student(1, "Tom", "US"),
-//                    new Student(2, "Harry", "Canada"),
-//                    new Student(3, "Nick", "UK")
-//            )
-//    );
-
-    // Mappings - URL endpoints
-    // Get the list of all student
+    @GetMapping
+    public String displayWelcomeMessage(){
+        return "<center><h1>Welcome to the Spring Boot Security!!!!</h1></center>";
+    }
     @GetMapping("/listStudents")
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
